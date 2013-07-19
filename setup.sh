@@ -16,6 +16,9 @@ nvm use v0.10.12
 # http://jshint.com/
 npm install -g jshint
 
+# Install Express for node.js web server
+npm install -g express
+
 # Install rlwrap to provide libreadline features with node
 # See: http://nodejs.org/api/repl.html#repl_repl
 sudo apt-get install -y rlwrap
@@ -26,6 +29,10 @@ sudo apt-add-repository -y ppa:cassou/emacs
 sudo apt-get update
 sudo apt-get install -y emacs24 emacs24-el emacs24-common-non-dfsg
 
+# configure git
+git config --global user.name "Patrick Cash"
+git config --global user.email patrick.j.cash@gmail.com
+
 # git pull and install dotfiles as well
 cd $HOME
 if [ -d ./dotfiles/ ]; then
@@ -34,7 +41,7 @@ fi
 if [ -d .emacs.d/ ]; then
     mv .emacs.d .emacs.d~
 fi
-git clone https://github.com/startup-class/dotfiles.git
+git clone https://github.com/patrickjcash/dotfiles.git
 ln -sb dotfiles/.screenrc .
 ln -sb dotfiles/.bash_profile .
 ln -sb dotfiles/.bashrc .
